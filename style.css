@@ -1,0 +1,36 @@
+body{
+    background-image: url(Images/Background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.txtTitre{
+text-align: center;
+font-family:'Lucida Sans';
+font-size: xx-large;
+
+
+}
+
+.col-8{
+    font-weight: bold;
+    background-color: #C46D8D;
+    margin-top: 4em;
+    margin-left: 5em;
+    border-radius: 10em;
+}
+
+
+.col-4{
+    margin-top: 6em;
+}
+
+
+.col-sm-8{
+    font-weight: bold;
+    background-color: yellow;
+    margin-top: 2.5em;
+    margin-left: 6em;
+    border-radius: 10em;
+}
