@@ -1,12 +1,3 @@
-<?php
-    session_start();
-    $nb_vie = 0;
-
-    if (isset($_SESSION['nb_vie'])) {
-        $nb_vie = $_SESSION['nb_vie'];
-
-    }
-?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -20,47 +11,207 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        
-        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>        
 
-        <form action="" method="post" class="form-example" id="champsconnection"> 
-            <div class="input-group mb-3">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
-                <input name="lettre" type="text" class="form-control" placeholder="Renter une lettre" aria-label="Example text with button addon" aria-describedby="button-addon1">
-            </div>
-        </form>
         <?php
+            session_start();
+            $nb_vie = 1;
+            $resultat = null;
+            $badLetter = null;
+            $goodLetter = null;
+
+            if (isset($_SESSION['nb_vie'])) {
+                $nb_vie = $_SESSION['nb_vie'];
+                $resultat = $_SESSION['resultat'];
+                $badLetter = $_SESSION['badLetter'];
+                $goodLetter = $_SESSION['goodLetter'];
+            }
+        ?>
+
+        <div class="container text-center">
+
+            <form action="" method="post" class="form-example">
+
+                <!-- clavier virtuel -->
+                <div class="row justify-content-center">
+
+                    <!-- Première ligne du clavier virtuel -->
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="a" class="btn btn-primary"></input>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="z" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="e" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="r" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="t" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="y" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="u" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="i" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="o" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="p" class="btn btn-primary"></button>
+                    </div>
+                    <!-- Fin de la première ligne du clavier virtuel -->
+
+                </div>
+
+                <div class="row justify-content-center">
+
+                    <!-- Seconde ligne du clavier virtuel -->
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="q" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="s" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="d" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="f" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="g" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="h" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="j" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="k" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="l" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="m" class="btn btn-primary"></button>
+                    </div>
+                    <!-- Fin de la seconde ligne du clavier virtuel -->
+
+                </div>
+
+                <div class="row justify-content-center">
+
+                    <!-- Troisième ligne du clavier virtuel -->
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="w" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="x" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="c" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="v" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="b" class="btn btn-primary"></button>
+                    </div>
+                    <div class="col-1 px-0">
+                        <input type="submit" name="test" value="n" class="btn btn-primary"></button>
+                    </div>
+                    <!-- Fin de la troisième ligne du clavier virtuel -->
+
+                </div>
+                <!-- Fin du clavier virtuel -->
+
+                <!-- Boutton reset -->
+                <a class="btn btn-primary" href="deconnexion.php" role="button">Deconnexion</a>
+                
+                <!-- Ajout des lettres utilisés dans $_SESSION['resultat'] -->
+                <?php
+                    if (isset($_POST['test']))
+                    {  
+                        if(isset($_POST['historique']))
+                        {
+                            $_SESSION['resultat'] = $_POST['historique'] . $_POST['test'];
+                        } 
+                        else 
+                        {
+                            $_SESSION['resultat'] = $_POST['test'];
+                        }
+                        
+                        ?>
+                            <input type="hidden" name="historique" value="<?= $_SESSION['resultat']; ?>" />
+                        <?php 
+                    } 
+                ?>
+
+            </form>
             
+            <!-- Affichage des lettres utilisés -->
+            <?php     
+                if (isset($_POST['test']))
+                {
+                    if (isset($_SESSION['resultat']))
+                    {
+                        echo $_SESSION['resultat'];
+                    }
+                }
+            ?>
+            <!-- Fin de l'affichage des lettres utilisés -->
 
+        </div>
+        
+        <?php
             $findLetter = 'test';
-            ?><img src="Images/image<?php echo $_SESSION['nb_vie']; ?>.jpg"/><?php
-            echo $_SESSION['nb_vie'];
-
             $find = false;
-            if (isset($_POST["lettre"]))
+
+            if (isset($_SESSION['resultat']))
             {
+                // Verification de la lettre choisi
                 for($i=0; $i < strlen($findLetter); $i++)
                 {
-                    if($findLetter[$i] == $_POST["lettre"])
+                    if($findLetter[$i] == $_SESSION['resultat'][strlen($_SESSION['resultat']) - 1])
                     {
                         $find = true;
                     }
                 }
+                // Evènement en cas de mauvaise lettre choisi
                 if ($find == false)
                 {
                     $_SESSION['nb_vie'] = $nb_vie + 1;
-                    echo $_SESSION['nb_vie'];
+                    $_SESSION['badLetter'] = $_SESSION['badLetter'] . $_SESSION['resultat'][strlen($_SESSION['resultat']) - 1];
+
+                    for($i = 0; $i < strlen($_SESSION['badLetter']); $i++)
+                    {
+                        echo $_SESSION['badLetter'][$i];
+                    }
+                    
                 }
+                // Evènement en cas de bonne lettre choisi
                 elseif($find == true)
                 {
                     echo "gg";
                 }
             }
-            ?>
-            <div class="col-4">
-                <div class="row">
-                    <?php
+        ?>
+
+        <!-- Affichage de l'image du pendu.  -->
+        <img src="Images/pendu/LePendu<?php echo $_SESSION['nb_vie']; ?>V.png"/>
+
+        <div class="col-4">
+            <div class="row">
+                <?php
+                    // Affichage nombre de lettre dans le mot
                     for ($i = 0; $i < strlen($findLetter); $i++)
                     {
                         ?>
@@ -69,127 +220,16 @@
                         </div>
                         <?php
                     }
-                    if ($nb_vie >= 2){
-
-                        $_SESSION['nb_vie'] = 0 ;
-
-                        session_destroy();
+                    // Evenement en cas de partie perdu
+                    if ($_SESSION['nb_vie'] == 10)
+                    {
+                        ?>
+                        <a class="btn btn-primary" href="deconnexion.php" role="button">Voulez vous recommencez ?</a>
+                        <?php
                     }
-        ?>
-                </div> 
-            </div>
-
-
-            <div class="container text-center">
-
-                <form action="" method="post" class="form-example">
-
-                    <div class="row justify-content-center">
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="a" type="button" class="btn btn-primary"></input>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="z" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="e" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="r" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="t" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="y" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="u" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="i" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="o" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="p" type="button" class="btn btn-primary"></button>
-                        </div>
-                    </div>
-
-                    <div class="row justify-content-center">
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="q" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="s" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="d" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="f" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="g" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="h" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="j" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="k" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="l" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="m" type="button" class="btn btn-primary"></button>
-                        </div>
-                    </div>
-
-                    <div class="row justify-content-center">
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="w" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="x" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="c" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="v" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="b" type="button" class="btn btn-primary"></button>
-                        </div>
-                        <div class="col-1 px-0">
-                            <input type="submit" name="test" value="n" type="button" class="btn btn-primary"></button>
-                        </div>
-                    </div>
-                    
-                    <?php 
-                        if (isset($_POST['test']))
-                        {
-                            ?>
-                                <input type="hidden" name="historique" value="<?= $_POST['historique'] . $_POST['test']; ?>" />
-                            <?php 
-                                if (isset($_POST['historique']))
-                                {
-                                    for ($i=0; count($_POST['historique']); $i++)
-                                    {
-                                        echo($_POST['historique']);
-                                    }
-                                }
-                        } 
-                    ?>
-
-                </form>
-                
-            </div>
-
+                ?>
+            </div> 
+        </div>
+        
     </body>
 </html>
