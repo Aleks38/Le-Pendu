@@ -1,3 +1,4 @@
+/*Image de background*/
 body{
     background-image: url(Images/Background.png);
     background-repeat: no-repeat;
@@ -12,25 +13,106 @@ font-size: xx-large;
 
 
 }
-
-.col-8{
+/*Bande top*/
+.col-12{
     font-weight: bold;
     background-color: #C46D8D;
-    margin-top: 4em;
-    margin-left: 5em;
+    margin-top: 3em;
     border-radius: 10em;
+    
 }
-
-
-.col-4{
-    margin-top: 6em;
-}
-
-
-.col-sm-8{
+/*Bande bottom*/
+.col-sm-12{
     font-weight: bold;
-    background-color: yellow;
+    background-color: #72427C;
     margin-top: 2.5em;
-    margin-left: 6em;
     border-radius: 10em;
+    height: 70px;
+   
 }
+.border-1{
+    --bs-border-width:2px;
+    --bs-border-color: black;
+}
+
+/*cadre droit / gauche  */
+
+.col-6{
+      margin-top: 6em;
+    
+    
+}
+.color{
+    background-color: #fdb5b7d0;
+}
+
+.block{
+    
+    
+    border-radius: 2em;
+    width: 512px;
+}
+.border-5{
+    --bs-border-opacity: 10;
+    --bs-border-color: #72427C;
+    --bs-border-width: 12px;
+    
+}
+
+
+/*button diffictulté  */
+
+
+.button {
+    border-radius: 4px;
+    border-radius: 3em;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 24px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    height: 50px;
+    
+  }
+  
+
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+
+    display: inherit;
+    vertical-align: middle;
+    line-height: normal;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+ 
+  .success {background-color: #04AA6D;} /* Green */
+.success:hover {background-color: #46a049;}
+
+.warning {background-color: #ff9800;} /* Orange */
+.warning:hover {background: #e68a00;}
+
+.danger {background-color: #f44336;} /* Red */
+.danger:hover {background: #da190b;}

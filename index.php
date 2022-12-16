@@ -12,28 +12,40 @@
     </head>
      <body>
 
-     
-     
-        <div class="container">
-   
-        <div class="col-8 txtTitre fs-1">Le Pendu</div>
+    <div class="container">
+            
+            <div class="row justify-content-center custom-line">
+                    <div class="col-12 txtTitre fs-1">Le Pendu</div>
+            </div>
 
 
+                <div class="row justify-content-around custom-line">
+            
+                    <div class="col-6 "><img class='test' src="Images/Lependu.png"></div>
+                    
+                    <div class="col-6 border border-5 color block">
+                         <div class='row  justify-content-around custom-line'> 
+                         <button class="btn success button "><span>Facile </span></button>
+                         <button class="btn warning button"><span>Moyen </span></button>
+                         <button class="btn danger button"><span>Difficile </span></button>
 
 
-    <div class="row">
-   
-        <div class="col-4 test"><img src="Images/Pendu.png"></div>
-        <div class="col-4 vide"></div>
-        <div class="col-4 test">test</div>
+                         </div>
+
+                    </div>
+                </div>
 
 
-</div>
+                <div class="row justify-content-center custom-line">
+                <div class="col-sm-12 txtTitre border border-1">text ramdom
 
-<div class="col-sm-8 txtTitre ">text ramdom</div>
-    
-</div>
-</div>
+               
+
+                </div>
+                
+            </div>
+    </div>
+
 
 
 
