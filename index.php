@@ -1,3 +1,18 @@
+<?php
+    session_start();
+    $nb_vie = 1;
+    $resultat = null;
+    $badLetter = null;
+    $goodLetter = null;
+
+    // if (isset($_SESSION['nb_vie'])) {
+        $nb_vie = $_SESSION['nb_vie'];
+        $resultat = $_SESSION['resultat'];
+        $badLetter = $_SESSION['badLetter'];
+        $goodLetter = $_SESSION['goodLetter'];
+    // }
+?>
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -12,21 +27,6 @@
     </head>
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>        
-
-        <?php
-            session_start();
-            $nb_vie = 1;
-            $resultat = null;
-            $badLetter = null;
-            $goodLetter = null;
-
-            if (isset($_SESSION['nb_vie'])) {
-                $nb_vie = $_SESSION['nb_vie'];
-                $resultat = $_SESSION['resultat'];
-                $badLetter = $_SESSION['badLetter'];
-                $goodLetter = $_SESSION['goodLetter'];
-            }
-        ?>
 
         <div class="container text-center">
 
@@ -151,7 +151,7 @@
                         
                         ?>
                             <input type="hidden" name="historique" value="<?= $_SESSION['resultat']; ?>" />
-                        <?php 
+                        <?php
                     } 
                 ?>
 
@@ -175,6 +175,10 @@
             $findLetter = 'test';
             $find = false;
 
+            for ($i = 0; $i < strlen($findLetter); $i++){
+                $_SESSION["goodLetter"] .="-";
+            }
+            
             if (isset($_SESSION['resultat']))
             {
                 // Verification de la lettre choisi
@@ -189,19 +193,29 @@
                 if ($find == false)
                 {
                     $_SESSION['nb_vie'] = $nb_vie + 1;
-                    $_SESSION['badLetter'] = $_SESSION['badLetter'] . $_SESSION['resultat'][strlen($_SESSION['resultat']) - 1];
-
-                    for($i = 0; $i < strlen($_SESSION['badLetter']); $i++)
-                    {
-                        echo $_SESSION['badLetter'][$i];
-                    }
-                    
+                    $_SESSION['badLetter'] = $_SESSION['badLetter'] . $_SESSION['resultat'][strlen($_SESSION['resultat']) - 1];                            
+                                        
                 }
                 // Evènement en cas de bonne lettre choisi
                 elseif($find == true)
                 {
-                    echo "gg";
+                    for ($i = 0; $i < strlen($findLetter); $i++){
+
+                        if ($_SESSION['resultat'][strlen($_SESSION['resultat']) - 1] == $findLetter[$i]){
+                            $_SESSION['goodLetter'][$i] = $_SESSION['resultat'][strlen($_SESSION['resultat']) - 1];
+                            
+                        }    
+                    }
+                    
                 }
+                // if(isset($_SESSION['goodLetter'])){
+                //     echo $_SESSION['goodLetter'];
+                // }
+                
+                // if(isset($_SESSION['badLetter'])){
+                //     echo $_SESSION['badLetter'];
+                // }
+                 
             }
         ?>
 
@@ -216,7 +230,8 @@
                     {
                         ?>
                         <div class="col mx-2">
-                            <hr ALIGN=CENTER WIDTH="50">
+                            <p class="text-center mb-0 fs-1">T</p>
+                            <hr class="mx-auto my-0" ALIGN=CENTER WIDTH="50" HEIGHT="20">
                         </div>
                         <?php
                     }
