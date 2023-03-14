@@ -192,7 +192,7 @@ if(isset($_POST['test']))  $_SESSION['lettres'][$_POST['test']] = 1 ;
             
             <!-- Affichage des lettres utilisés -->
             <?php     
-                if (isset($_POST['test']))
+                if (isset($_POST['Test']))
                 {
                     if (isset($_SESSION['resultat']))
                     {
@@ -232,8 +232,7 @@ if(isset($_POST['test']))  $_SESSION['lettres'][$_POST['test']] = 1 ;
                 // Evènement en cas de mauvaise lettre choisi
                 if ($find == false)
                 {
-                    $_SESSION['nb_vie'] = $_SESSION['nb_vie'] + 1;
-                    $_SESSION['badLetter'] = $_SESSION['badLetter'] . $_SESSION['resultat'][strlen($_SESSION['resultat']) - 1];                            
+                    $_SESSION['nb_vie'] = $_SESSION['nb_vie'] + 1;                        
                     
                 }
                 // Evènement en cas de bonne lettre choisi
@@ -274,6 +273,7 @@ if(isset($_POST['test']))  $_SESSION['lettres'][$_POST['test']] = 1 ;
                         </div>
                         <?php
                     }
+                    // Evenement en cas de victoire
                     if ($_SESSION['goodLetter'] == $findLetter){
                         echo "Vous avez gagné";
                     }
@@ -283,7 +283,7 @@ if(isset($_POST['test']))  $_SESSION['lettres'][$_POST['test']] = 1 ;
                     if ($_SESSION['nb_vie'] == 10)
                     {
                         ?>
-                        <a class="btn btn-primary" href="deconnexion.php" role="button">Voulez vous recommencez ?</a>
+                            <a class="btn btn-primary" href="deconnexion.php" role="button">Voulez vous recommencez ?</a>
                         <?php
                     }
                 ?>
