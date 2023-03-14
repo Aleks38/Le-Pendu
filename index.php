@@ -232,7 +232,7 @@ if(isset($_POST['test']))  $_SESSION['lettres'][$_POST['test']] = 1 ;
                 // Evènement en cas de mauvaise lettre choisi
                 if ($find == false)
                 {
-                    $_SESSION['nb_vie'] = $_SESSION['nb_vie'] + 1;                        
+                    $_SESSION['nb_vie'] = $_SESSION['nb_vie'] + 1;
                     
                 }
                 // Evènement en cas de bonne lettre choisi
