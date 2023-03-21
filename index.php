@@ -50,7 +50,6 @@
     if (isset($_POST['test']))  $_SESSION['lettres'][$_POST['test']] = 1;
     // if (isset($_POST['difficulte'])) $_SESSION['bouton'][$_POST['Facile']] = 1;
 
-    echo $_SESSION['bouton'];
     if (isset($_POST['difficulte'])) {
         include 'traitement.php';
         include 'start.php';
