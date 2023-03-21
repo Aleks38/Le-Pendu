@@ -1,12 +1,16 @@
 <?php
-    try
-    {
-    // Souvent on identifie cet objet par la variable $conn ou $db
-    $mysqlClient = new PDO(
-    'mysql: host=localhost; dbname=xmktwers_alexybdd; charset=utf8', 'xmktwers_alexy', 'FJM~N#8N+rad7!d~a8');
+    $servername = "localhost";
+    $username = "root";
+    $password = ""; 
+    $dbname = "pendu";
+
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        // Configurer l'attribut PDO pour gérer les erreurs en mode exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    } catch(PDOException $e) {
+        echo "Échec de la connexion à la base de données: " . $e->getMessage();
     }
-    catch (Exception $e)
-    {
-    die('Erreur : ' . $e->getMessage());
-    }
+
 ?>
